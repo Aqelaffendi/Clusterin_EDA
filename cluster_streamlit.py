@@ -5,8 +5,9 @@ from sklearn.cluster  import KMeans
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import silhouette_score
 import plotly.express as px
+import os
 
-df = pd.read_csv('mainAndWeather.csv')
+df = pd.read_csv(os.getcwd()+'/mainAndWeather.csv')
 cluster_choice = st.radio("Select a cluster method: ", ["By location", "By features"], horizontal=True)
 # List of features selected by Boruta and RFE
 feats = ["Laundry_count", "Hour", "TimeSpent_minutes", "Age_Range", "Humidity_percent", "Wind_kmph", "Temp_celsius",
